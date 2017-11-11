@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0000" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/userlogoArea"
+        android:onClick="onClick_userlogo">
+        <com.example.linukey.addedit_userinfo.CircleImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/userlogo"
+            android:src="@mipmap/circle_icon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/username"
+            android:layout_alignLeft="@id/userlogo"
+            android:layout_marginLeft="80dp"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userlogoArea"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="systemSetting">
+            <ImageView
+                android:id="@+id/id_img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/setting" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/id_img1"
+                android:text="设置中心"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="messageCenter">
+            <ImageView
+                android:id="@+id/id_img2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/id_img2"
+                android:text="消息中心"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

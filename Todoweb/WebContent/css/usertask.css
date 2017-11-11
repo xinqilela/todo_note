@@ -1,0 +1,317 @@
+body{
+	float:left;
+	width:98%;
+	margin-left:1%;
+	heigth:100%;
+	overflow:hidden;
+}
+
+#header{
+	float:left;
+	width:100%;
+	height:70px;
+	background:-webkit-radial-gradient(hsla(240,70%,60%,.9),hsla(200,60%,60%,.9));
+}
+
+#userlogo{
+	width:64px;
+	height:64px;
+	border-radius:50%;
+	cursor:pointer;
+	float:left;
+	margin-left:70px;
+	margin-top:3px;
+}
+
+#userlogo:hover{
+	transform: scale(1.1);
+}
+
+#search{
+	left:750px;
+	top:25px;
+	position:absolute;
+}
+
+#searchInput{
+	width:300px;
+	height:30px;
+	border-radius:5px;
+	border:solid #D9D9D9 1px;
+}
+
+#searchBtn{
+    height:30px;
+    width: 50px;
+    position:absolute;
+    left:270px;
+    top:7px;
+    border:none;
+    background: url(../img/search.png);
+    background-repeat: no-repeat;
+    cursor:pointer;
+}
+
+#searchBtn:hover{
+	transform: scale(1.1);
+}
+
+#addtask{
+	float:left;
+	height:22px;
+	width:22px;
+	margin-left:80px;
+	margin-top:24px;
+	cursor:pointer;
+}
+
+#addtask:hover{
+	transform: scale(1.1);
+}
+
+#usermenu{
+	position:absolute;
+	top:70px;
+}
+
+#logout, #home{
+	color:white;
+}
+
+a{text-decoration: none;outline: none;}
+a:hover,a:focus{color:#74777b;}
+
+#addselftask, #editselftask, #addSelfProject, #addSelfGoal, #addSelfSight,
+ #addteamtask, #addTeamProject, #editTeamProject, #editteamtask, #editSelfProject, #editSelfGoal, #editSelfSight{
+	background:aliceblue;
+	width:520px;
+	position:absolute;
+	top:80px;
+	z-index:2;
+	left:30%;
+	display:none;
+}
+
+#addselftask, #editselftask{
+	height: 550px;
+}
+
+#addSelfProject, #addSelfGoal, #addSelfSight, #addTeamProject, #editTeamProject, #editSelfProject, #editSelfGoal, #editSelfSight{
+	height: 250px;
+}
+
+#addteamtask, #editteamtask{
+	height:470px;
+}
+
+#box{
+	margin-top:20px;
+	margin-left:60px;
+	margin-right:60px;
+}
+
+#selftaskhead{
+	position:relative;
+	margin-left:215px;
+	margin-top:20px;
+}
+
+#clock, #title, #content{
+	height:35px;
+	width:400px;
+	border-radius:5px;
+	border:solid #D9D9D9 1px;
+    margin-top:10px;
+    margin-left:60px;
+    margin-right:60px;
+}
+
+.datepicker{
+	height:35px;
+	width:400px;
+	border-radius:5px;
+	border:solid #D9D9D9 1px;
+    margin-top:10px;
+    margin-left:60px;
+    margin-right:60px;
+}
+
+.task_select{
+	margin-left:10px;
+	border-radius:5px;
+	border:solid #D9D9D9 1px;
+	height:30px;
+	width:350px;
+}
+
+#project, #goal, #sight, #team{
+	margin-left:60px;
+	margin-rigth:60px;
+	margin-top:10px;
+}
+
+#title{
+	margin-top:10px;
+}
+
+#save{
+	margin-left:120px;
+}
+
+#cancel{
+	margin-left:80px;
+}
+
+#save, #cancel{
+	height:30px;
+	width:100px;
+	border-radius:5px;
+	cursor:pointer;
+	border:solid #0B0A0A 1px;
+}
+
+#save:hover, #cancel:hover{
+	background:#33987A
+}
+
+#screendark{
+	position:absolute;
+	height:100%;
+	width:100%;
+	background:#000000;
+	opacity:0.9;
+	z-index:1;
+}
+
+#leftmenu{
+	float:left;
+	width:100px;
+}
+
+#leftmenu-ul{
+	margin-left:-25px;
+}
+
+#leftmenu-ul li{
+	width:185px;
+}
+
+#leftmenu-ul span{
+	margin-top:10px;
+	display:block;
+	width:160px;
+	color:gray;
+	height:30px;
+	padding-left:65px;
+	padding-top:5px;
+	border-radius:5px;
+	background:#CBCD36;
+}
+
+#leftmenu-ul ul{
+	background:#484141;
+	width:185px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius:5px;
+}
+
+#leftmenu-ul ul li{
+	width:215px;
+	height:30px;
+	border-radius:3px;
+	margin-left:-40px;
+	margin-top:10px;
+	padding-left:10px;
+}
+
+#leftmenu-ul ul li:hover{
+	background:#BCBC9D;
+}
+
+.leftmenuSelect{
+	background:#BCBC9D;
+}
+
+#leftmenu-ul ul li a{
+	color:white;
+	height:20px;
+	margin-left:10px;
+	position:relative;
+	top:-1px;
+}
+
+#leftmenu-ul ul li img{
+	width:20px;
+	height:20px;
+	margin-left:35px;
+	position:relative;
+	top:3px;
+}
+
+#rightcontent{
+	float:right;
+	width: calc(100% - 270px);	
+	margin-right:15px;
+	margin-top:15px;
+}
+
+
+#showtasks{
+	border-radius:5px;
+	width:100%;
+}
+
+#showtasks th{
+	font-size:20px;
+	color:#2B7245;
+}
+
+#showtasks td{
+	text-align: center;
+	height:40px;
+}
+
+.other{
+	background:#33A1B1;
+}
+
+.btnTask{
+	background:#2C9C51;
+	border-radius:5px;
+	cursor:pointer;
+}
+
+.btnTask:hover{
+	background:#5AC4B3;
+}
+
+#addselect{
+	position:absolute;
+	z-index:3;
+	top:20%;
+	left:calc(50% - 100px);
+	width:200px;
+}
+
+#addselect_table{
+	
+}
+
+.addselect_td{
+	height:50px;
+	cursor:pointer;
+	width:200px;
+	background:aliceblue;
+	text-align: center;
+}
+
+.addselect_td:hover{
+	background:#6790DF;
+}
+
+
+
+
+
+

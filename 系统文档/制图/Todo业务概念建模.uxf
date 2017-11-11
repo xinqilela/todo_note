@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>320</x>
+      <y>430</y>
+      <w>160</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>个人任务信息
+--
++ title
++ content
+ 
++ starttime
++ endtime
++ clocktime
+ 
++ project
++ goal
++ sight
+ 
++ state
++ group
++ userId (fk)
++ goalId (fk)
++ sightId (fk)
++ projectId (fk)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>580</x>
+      <y>210</y>
+      <w>160</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>团队
+--
++ name
++ content
++ member
++ leader
++ teamId (pk)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>590</x>
+      <y>430</y>
+      <w>160</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>团队任务信息
+--
++ title
++ content
+ 
++ starttime
++ endtime
++ clocktime
+ 
++ project
++ teamname
+ 
++ state
++ teamId (fk)
++ projectId(fk)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>490</x>
+      <y>820</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>项目
+--
++ name
++ content
+ 
++ state
++ projectId(pk)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>130</x>
+      <y>820</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>目标
+--
++ name
++ content
+ 
++ state
++ goalId (pk)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>320</x>
+      <y>820</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>情景
+--
++ name
++ content
++ sightId (pk)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>320</x>
+      <y>210</y>
+      <w>160</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>用户
+--
++ username
++ password
++ email
++ phonenumber
+ 
++ usergroup
+ 
++ userId (pk)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>450</x>
+      <y>270</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n</panel_attributes>
+    <additional_attributes>30;30;130;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>350</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n</panel_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>630</x>
+      <y>350</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n</panel_attributes>
+    <additional_attributes>30;80;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>180</x>
+      <y>720</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n</panel_attributes>
+    <additional_attributes>30;100;220;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>720</y>
+      <w>50</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n</panel_attributes>
+    <additional_attributes>30;100;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>720</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n</panel_attributes>
+    <additional_attributes>200;100;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>720</y>
+      <w>150</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n</panel_attributes>
+    <additional_attributes>30;100;130;30</additional_attributes>
+  </element>
+</diagram>

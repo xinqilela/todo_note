@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCE8CF">
+
+    <Button
+        style="@style/selfAndteamMenuBtn_style"
+        android:drawableStart="@mipmap/today"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnToday"
+        android:onClick="onClick_btnToday"
+        android:background="@drawable/selfandteammenu"
+        android:text="今日待办"/>
+    <Button
+        style="@style/selfAndteamMenuBtn_style"
+        android:drawableStart="@mipmap/tomorrow"
+        android:layout_marginBottom="1dp"
+        android:id="@+id/btnTomorrow"
+        android:onClick="onClick_btnTomorrow"
+        android:background="@drawable/selfandteammenu"
+        android:text="明日待办"/>
+    <Button
+        style="@style/selfAndteamMenuBtn_style"
+        android:drawableStart="@mipmap/next"
+        android:id="@+id/btnNext"
+        android:onClick="onClick_btnNext"
+        android:background="@drawable/selfandteammenu"
+        android:text="下一步行动"/>
+
+    <Button
+        style="@style/selfAndteamMenuBtn_style"
+        android:drawableStart="@mipmap/project"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnProject"
+        android:onClick="onClick_btnProject"
+        android:background="@drawable/selfandteammenu"
+        android:text="项目"/>
+    <Button
+        style="@style/selfAndteamMenuBtn_style"
+        android:drawableStart="@mipmap/teamname"
+        android:id="@+id/btnTeamname"
+        android:onClick="onClick_btnTeamname"
+        android:background="@drawable/selfandteammenu"
+        android:text="小组名称"/>
+
+    <Button
+        style="@style/selfAndteamMenuBtn_style"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnMyTeam"
+        android:drawableLeft="@mipmap/team"
+        android:onClick="onClick_btnMyTeam"
+        android:background="@drawable/selfandteammenu"
+        android:text="我的小组"/>
+</LinearLayout>

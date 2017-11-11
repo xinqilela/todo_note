@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.linukey.todo">
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true" />
+    <!-- Required -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:icon="@mipmap/todo_icon"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:name="com.example.linukey.util.TodoHelper"
+        android:supportsRtl="true"
+        android:theme="@style/my_theme">
+        <activity android:name=".MainActivity" />
+
+        <activity android:name="com.example.linukey.login.LoginActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:label="登录"/>
+
+        <activity android:name="com.example.linukey.register.RegisterActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:label="注册"/>
+
+        <activity android:name="com.example.linukey.system_setting.SystemSettingActivity"
+            android:theme="@style/my_theme"/>
+
+        <activity android:name="com.example.linukey.notification.NotificationActivity" />
+
+        <activity android:name="com.example.linukey.addedit_userinfo.AddEditUserInfoActivity"
+            android:theme="@style/my_theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.linukey.addedit_selfpgs.AddEditSelfpgsActivity"
+            android:theme="@style/my_theme"/>
+
+        <activity android:name="com.example.linukey.addedit_selftask.AddEditSelfTaskActivity"
+            android:theme="@style/my_theme"/>
+
+        <activity android:name="com.example.linukey.addedit_teamtask.AddEditTeamTaskActivity"
+            android:theme="@style/my_theme"/>
+
+        <activity android:name="com.example.linukey.addedit_team.AddEditTeamActivity"
+            android:theme="@style/my_theme"/>
+
+        <activity android:name="com.example.linukey.selfpgs.SelfPGSActivity"/>
+
+        <activity android:name="com.example.linukey.selftask.SelfTaskActivity"/>
+
+        <activity android:name="com.example.linukey.launch.LaunchActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.linukey.team.TeamActivity"/>
+
+        <activity android:name="com.example.linukey.teamtask.TeamTaskActivity" />
+
+        <activity android:name="com.example.linukey.teamsearch.TeamSearchActivity" />
+
+        <!-- 设置环信应用的AppKey -->
+        <meta-data android:name="EASEMOB_APPKEY"  android:value="1154161205178901#todo" />
+        <!-- 声明SDK所需的service SDK核心功能-->
+        <service android:name="com.hyphenate.chat.EMChatService" android:exported="true"/>
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.example.linukey.data.source.local.SelfTaskContentProvider"
+            android:authorities="com.linukey.Todo.self_task"/>
+        <provider
+            android:name="com.example.linukey.data.source.local.UserContentProvider"
+            android:authorities="com.linukey.Todo.user"/>
+        <provider
+            android:authorities="com.linukey.Todo.project"
+            android:name="com.example.linukey.data.source.local.ProjectContentProvider"/>
+        <provider
+            android:authorities="com.linukey.Todo.goal"
+            android:name="com.example.linukey.data.source.local.GoalContentProvider"/>
+        <provider
+            android:authorities="com.linukey.Todo.sight"
+            android:name="com.example.linukey.data.source.local.SightContentProvider"/>
+        <provider
+            android:authorities="com.linukey.Todo.team"
+            android:name="com.example.linukey.data.source.local.TeamContentProvider"/>
+        <provider
+            android:authorities="com.linukey.Todo.teamtask"
+            android:name="com.example.linukey.data.source.local.TeamTaskContentProvider"/>
+        <provider
+            android:authorities="com.linukey.Todo.teamjoindata"
+            android:name="com.example.linukey.data.source.local.TeamJoinInfoContentProvider"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:background="#3B3D41"
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/teamsearchbackbtn"
+            android:textSize="20sp"
+            android:onClick="onClick_back"
+            android:text="←"/>
+        <View
+            android:id="@+id/split"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/btnBack"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#7AA410" />
+        <EditText
+            android:id="@+id/content"
+            android:layout_toRightOf="@+id/split"
+            android:drawableLeft="@mipmap/search"
+            android:drawablePadding="10dp"
+            android:background="@null"
+            android:hint="请输入小组名!"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/searchResult"
+        android:layout_below="@id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+</RelativeLayout>

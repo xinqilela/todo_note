@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>351</x>
+      <y>243</y>
+      <w>225</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>web服务器
+
+Apache Tomcat 8.0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>396</x>
+      <y>342</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Web Application</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>324</x>
+      <y>252</y>
+      <w>260</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;243;27</additional_attributes>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>603</x>
+      <y>441</y>
+      <w>225</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>数据库服务器
+
+
+数据库 = Mysql 5.1.48</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Artefact</type>
+    <coordinates>
+      <x>666</x>
+      <y>531</y>
+      <w>99</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>数据库</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>45</x>
+      <y>144</y>
+      <w>225</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>PC(云笔记Web端)
+
+
+
+浏览器 = 各种常用的</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>18</x>
+      <y>153</y>
+      <w>260</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;243;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>360</y>
+      <w>104</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-
+_internet_</panel_attributes>
+    <additional_attributes>36;27;72;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>243</x>
+      <y>153</y>
+      <w>125</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=-
+_internet_</panel_attributes>
+    <additional_attributes>27;27;108;99</additional_attributes>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>45</x>
+      <y>360</y>
+      <w>225</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>手机(云笔记手机端)
+
+
+浏览器 = 各种常用的
+
+Android App</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>18</x>
+      <y>369</y>
+      <w>260</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>27;27;243;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>243</x>
+      <y>333</y>
+      <w>125</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+_internet_</panel_attributes>
+    <additional_attributes>27;63;108;27</additional_attributes>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>648</x>
+      <y>117</y>
+      <w>225</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>管理员的PC(管理员后台)
+
+
+浏览器 = 各种常用的</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>549</x>
+      <y>162</y>
+      <w>116</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=-
+_internet_</panel_attributes>
+    <additional_attributes>27;108;99;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>576</x>
+      <y>450</y>
+      <w>260</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>243;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Relation</type>
+    <coordinates>
+      <x>621</x>
+      <y>126</y>
+      <w>260</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>243;27;27;27</additional_attributes>
+  </element>
+</diagram>

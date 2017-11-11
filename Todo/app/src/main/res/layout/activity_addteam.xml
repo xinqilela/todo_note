@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="小组名称"
+        android:paddingLeft="15dp"
+        android:textSize="18sp"
+        android:background="#FFFFFF"
+        android:id="@+id/title"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="2dp"
+        android:hint="描述"
+        android:textSize="18sp"
+        android:paddingLeft="15dp"
+        android:gravity="top"
+        android:maxLines="10"
+        android:height="100dp"
+        android:background="#FFFFFF"
+        android:id="@+id/content"/>
+</RelativeLayout>

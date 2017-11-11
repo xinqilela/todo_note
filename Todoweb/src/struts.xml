@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置Struts框架  属性  -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.devMode " value="true" />
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	
+	<package name="UserManager" extends="json-default">		
+	    <interceptors> 
+	        <!-- 用户权限检查 -->
+	    	<interceptor name="checkUserPermission" class="com.linukey.todo.dao.CheckUserPermissionInterceptor"></interceptor>    
+	    </interceptors>
+	    <!-- 登录 -->
+		<action name="login" class="com.linukey.todo.action.Login" method="loginAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="json" type="json">
+			    <param name="root">result</param>
+			</result>
+		</action>
+		<!-- 注册 -->
+		<action name="regist" class="com.linukey.todo.action.Register" method="registAction">
+		    <result name="success">/index.jsp</result>
+		    <result name="input">/register.jsp</result>
+		    <result name="json" type="json">
+		        <param name="root">clientResult</param>
+		    </result>
+		</action>
+		<!-- 退出 -->
+		<action name="logout" class="com.linukey.todo.action.Login" method="logout">
+		    <result name="success">/index.jsp</result>
+		    <result name="input">/index.jsp</result>
+		</action>
+		<!-- 进入用户信息中心 -->
+		<action name="acessUserinfo" class="com.linukey.todo.action.Setting" method="getUserinfo">
+		    <result name="success">/WEB-INF/normal/userinfo.jsp</result>
+		    <result name="login">/login.jsp</result>
+		    <result name="input">/result.jsp</result>
+		</action>
+		<!-- 上传用户头像 -->
+		<action name="upLoadImg" class="com.linukey.todo.action.Setting" method="upLoadImg">
+			<result name="web" type="json">
+			    <param name="noCache">true</param>
+			    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="json" type="json">
+				<param name="root">clientResult</param>
+			</result>
+		</action>
+		<!-- 通过userId获取用户logo web存放地址 -->
+		<action name="obtainUserLogoUrl" class="com.linukey.todo.action.Setting" method="obtainUserLogoUrl">
+			<result name="web" type="json">
+			    <param name="noCache">true</param>
+			    <param name="excludeNullProperties">true</param>
+			</result>
+			<result name="json" type="json">
+				<param name="root">clientResult</param>
+			</result>
+		</action>		
+		<!-- 更新用户信息 -->
+		<action name="updateUserInfo" class="com.linukey.todo.action.Setting" method="updateUserInfo">
+		    <result name="success" type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+		  	<result name="json" type="json">
+		  	    <param name="root">clientResult</param>
+		  	</result>
+		</action>
+	</package>	
+	<package name="AdminManager" extends="struts-default">
+	    <!-- 进入后台管理页面 -->
+	    <action name="acessAdmin" class="com.linukey.todo.action.AdminManager" method="initAdmin">
+	        <result name="success">/WEB-INF/root/admin.jsp</result>
+	        <result name="input">/index.jsp</result>
+	    </action>
+	    <!-- 分页获取用户数据 -->
+	    <action name="getUsersByPage" class="com.linukey.todo.action.AdminManager" method="getUsersByPage">
+	        <result name="success">/WEB-INF/root/admin.jsp</result>
+	        <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 查找用户 -->
+	    <action name="searchUser" class="com.linukey.todo.action.AdminManager" method="searchUserByName">
+	        <result name="success">/WEB-INF/root/admin.jsp</result>
+	        <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 删除用户 -->
+	    <action name="deleteUser" class="com.linukey.todo.action.AdminManager" method="deleteUserById">
+	        <result name="success">/WEB-INF/root/admin.jsp</result>
+	        <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 提升用户的管理权限 -->
+	  	<action name="toRoot" class="com.linukey.todo.action.AdminManager" method="toRootById">
+	        <result name="success">/WEB-INF/root/admin.jsp</result>
+	        <result name="input">/result.jsp</result>
+	    </action>
+	</package>
+	<package name="DataTync" extends="json-default">
+		<!-- 通过userId来获取username -->
+	    <action name="getUserNameByUserId" class="com.linukey.todo.action.Register" method="getUserNameByUserID">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>		
+	    <!-- 保存个人任务数据 -->
+	    <action name="saveSelfTask" class="com.linukey.todo.action.AddEditSelfTask" method="saveSelfTask">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>
+	    <!-- 更新个人任务数据 -->
+	    <action name="updateSelfTask" class="com.linukey.todo.action.AddEditSelfTask" method="updateSelfTask">
+	        <result name="client" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	        <result name="web" type="json">
+	        	<param name="root">selftask</param>
+	        </result>
+	    </action>
+	    <!-- 获取个人任务数据 -->
+	   	<action name="getSelfTasks" class="com.linukey.todo.action.AddEditSelfTask" method="obtainSelfTasks">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>
+	    <!-- 保存团队任务数据 -->
+	    <action name="saveTeamTask" class="com.linukey.todo.action.AddEditTeamTask" method="saveTeamTask">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	        <result name="web" type="json">
+	        </result>
+	    </action>
+	    <!-- 更新团队任务数据 -->
+	    <action name="updateTeamTask" class="com.linukey.todo.action.AddEditTeamTask" method="updateTeamTask">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	        <result name="web" type="json">
+	        	<param name="root">teamtask</param>
+	        </result>
+	    </action>
+	    <!-- 获取团队任务数据 -->
+	   	<action name="getTeamTasks" class="com.linukey.todo.action.AddEditTeamTask" method="obtainTeamTasks">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>	    
+	    <!-- 保存项目数据 -->
+	    <action name="saveProject" class="com.linukey.todo.action.AddEditProject" method="saveProject">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>
+	    <!-- 更新项目数据 -->
+	   	<action name="updateProject" class="com.linukey.todo.action.AddEditProject" method="updateProject">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	        <result name="web" type="json">
+	        	<param name="project">project</param>
+	        </result>
+	    </action>
+	    <!-- 获取项目数据 -->
+	    <action name="getProjects" class="com.linukey.todo.action.AddEditProject" method="obtainProjects">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	        <result name="web" type="json">
+	        </result>
+	    </action>
+	    <!-- 保存目标数据 -->
+	    <action name="saveGoal" class="com.linukey.todo.action.AddEditGoal" method="saveGoal">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>
+	    <!-- 更新目标数据 -->
+	   	<action name="updateGoal" class="com.linukey.todo.action.AddEditGoal" method="updateGoal">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	        <result name="web" type="json">
+	        	<param name="goal">goal</param>
+	        </result>
+	    </action>
+	    <!-- 获取目标数据 -->
+	    <action name="getGoals" class="com.linukey.todo.action.AddEditGoal" method="obtainGoals">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>
+	    <!-- 保存情景数据 -->
+	    <action name="saveSight" class="com.linukey.todo.action.AddEditSight" method="saveSight">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>
+	    <!-- 更新情景数据 -->
+	   	<action name="updateSight" class="com.linukey.todo.action.AddEditSight" method="updateSight">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	        <result name="web" type="json">
+	        	<param name="sight">sight</param>
+	        </result>
+	    </action>
+	    <!-- 获取情景数据 -->
+	    <action name="getSights" class="com.linukey.todo.action.AddEditSight" method="obtainSights">
+	        <result name="json" type="json">
+	            <param name="root">clientResult</param>
+	        </result>
+	    </action>
+	    <!-- 保存团队信息数据 -->
+	    <action name="saveTeam" class="com.linukey.todo.action.AddEditTeam" method="saveTeam">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    </action>
+	    <!-- 通过用户Id获取用户的团队信息 -->
+	    <action name="getTeams" class="com.linukey.todo.action.AddEditTeam" method="obtainTeams">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    	<result name="web" type="json">
+	    	</result>
+	    </action>	    
+	    <!-- 通过小组名来查询所有满足条件的小组信息 -->
+	    <action name="getTeamsByTeamName" class="com.linukey.todo.action.AddEditTeam" method="obtainTeamsByTeamName">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    	<result name="success">/result.jsp</result>
+	    </action>	
+	    <!-- 更改小组信息 --> 
+	    <action name="updateTeam" class="com.linukey.todo.action.AddEditTeam" method="updateTeam">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    	<result name="web" type="json">
+	    		<param name="web">team</param>
+	    	</result>
+	    </action>	 	  	    
+	    <!-- 保存申请加入小组通知 -->
+	    <action name="saveTeamJoinNotification" class="com.linukey.todo.action.AddEditNotification" method="saveTeamJoinNotification">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    </action>
+	    <!-- 获取用户的申请加入小组通知 -->
+	    <action name="getTeamJoinNotifications" class="com.linukey.todo.action.AddEditNotification" method="getTeamJoinNotifications">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    </action>	    
+	    <!-- 让某用户加入小组 -->
+	    <action name="agreeSomeOneToJoinTeam" class="com.linukey.todo.action.AddEditNotification" method="agreeSomeOneToJoinTeam">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    </action>	 
+	    <!-- 用户退出小组 -->
+	    <action name="userQuitTeam" class="com.linukey.todo.action.AddEditNotification" method="userQuitTeam">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    	<result name="web" type="json">
+	    	</result>
+	    </action>	 	    
+	   	<!-- 删除加入小组通知消息 -->
+	    <action name="deleteTeamJoinData" class="com.linukey.todo.action.AddEditNotification" method="deleteTeamJoinData">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    </action>	 
+	   	<!-- 拒绝加入 -->
+	    <action name="refuseSomeOneToJoinTeam" class="com.linukey.todo.action.AddEditNotification" method="refuseSomeOneToJoinTeam">
+	    	<result name="json" type="json">
+	    		<param name="root">clientResult</param>
+	    	</result>
+	    </action>	 
+	</package>
+	<package name="UserTasks" extends="json-default">
+		<!-- 进入用户任务页面 初始化用户任务数据 -->
+	    <action name="getintoUserTask" class="com.linukey.todo.action.AddEditSelfTask" method="initUserTasks">
+	    	<result name="success">/WEB-INF/normal/usertask.jsp</result>
+	    </action>
+	    <!-- 获取个人任务今日待办 -->
+	    <action name="getSelfToday" class="com.linukey.todo.action.AddEditSelfTask" method="obtainSelfToday">
+		    <result name="json" type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 获取个人任务明日待办 -->
+	    <action name="getSelfTomorrow" class="com.linukey.todo.action.AddEditSelfTask" method="obtainSelfTomorrow">
+		    <result name="json" type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 获取个人任务下一步行动 -->
+	    <action name="getSelfNext" class="com.linukey.todo.action.AddEditSelfTask" method="obtainSelfNext">
+		    <result name="json" type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 获取个人任务备忘箱任务-->
+	    <action name="getSelfBox" class="com.linukey.todo.action.AddEditSelfTask" method="obtainSelfBox">
+		    <result type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 获取个人任务的项目、目标、情景 -->
+	    <action name="getSelfGoals" class="com.linukey.todo.action.AddEditGoal" method="obtainGoals">
+	    	<result name="json" type="json">
+	    		<param name="goals">listGoals</param>
+	    		<param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+	    	</result>
+	    </action>
+	   	<action name="getSelfProjects" class="com.linukey.todo.action.AddEditProject" method="obtainProjects">
+	    	<result name="json" type="json">
+	    		<param name="projects">listProjects</param>
+	    		<param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+	    	</result>
+	    </action>
+	   	<action name="getTeamProjects" class="com.linukey.todo.action.AddEditProject" method="obtainProjects">
+	    	<result name="json" type="json">
+	    		<param name="projects">listProjects</param>
+	    		<param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+	    	</result>
+	    </action>
+	   	<action name="getSelfSights" class="com.linukey.todo.action.AddEditSight" method="obtainSights">
+	    	<result name="json" type="json">
+	    		<param name="sights">listSights</param>
+	    		<param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+	    	</result>
+	    </action>
+	    <!-- 一次性获取个人任务的项目，目标，情景数据 -->
+	    <action name="getSelfPGS" class="com.linukey.todo.action.AddEditSelfTask" method="obtainPGS">
+	    	<result name="json" type="json">
+	    		<param name="sights">listSights</param>
+	    		<param name="goals">listGoals</param>
+	    		<param name="projects">listProjects</param>
+	    	</result>
+	    </action>
+	    <!-- 获取team任务today日待办 -->
+	    <action name="getTeamToday" class="com.linukey.todo.action.AddEditTeamTask" method="obtainTeamToday">
+		    <result name="json" type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 获取team任务明日待办 -->
+	    <action name="getTeamTomorrow" class="com.linukey.todo.action.AddEditTeamTask" method="obtainTeamTomorrow">
+		    <result name="json" type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+	    </action>
+	    <!-- 获取team任务下一步行动 -->
+	    <action name="getTeamNext" class="com.linukey.todo.action.AddEditTeamTask" method="obtainTeamNext">
+		    <result name="json" type="json">
+		        <param name="noCache">true</param>
+		        <param name="excludeNullProperties">true</param>
+		    </result>
+		    <result name="input">/result.jsp</result>
+	    </action>    
+	</package>
+</struts>

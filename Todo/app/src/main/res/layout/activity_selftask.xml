@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/activity_selftask"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.linukey.selftask.SelfTaskActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.linukey.todo.SwipeMenu.SwipeMenuListView
+        android:id="@+id/listview_selftask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"/>
+</android.support.v4.widget.SwipeRefreshLayout>

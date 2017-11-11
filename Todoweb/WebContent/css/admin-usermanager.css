@@ -1,0 +1,152 @@
+#usermanager{
+	width:100%;
+	height:100%;
+}
+
+#input_search{
+	width: 300px;
+    height: 40px;
+    border:solid #D9D9D9 1px;
+    color: black;
+    border-radius: 8px;
+}
+
+#toRoot, #oneinfo_toRoot{
+	position:relative;
+	top:20px;
+	background:#363E96;
+	border-radius: 8px;
+	color:white;
+	padding:5px;
+	cursor:pointer;
+}
+
+#update, #oneinfo_update{
+	position:relative;
+	top:20px;
+	background:#363E96;
+	border-radius: 8px;
+	color:white;
+	padding:5px;
+	cursor:pointer;
+}
+
+#delete, #oneinfo_delete{
+	position:relative;
+	top:20px;
+	background:#363E96;
+	border-radius: 8px;
+	color:white;
+	padding:5px;
+	cursor:pointer;
+}
+
+#update:hover, #oneinfo_update:hover, #delete:hover, #oneinfo_delete:hover, #toRoot:hover, #oneinfo_toRoot:hover{
+	background:#3C47BC;
+}
+
+#searchnull{
+	display:block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	font-size:25px;
+}
+
+#btnBack{
+	width: 130px;
+    height: 40px;
+    border:solid #D9D9D9 1px;
+    color: black;
+    border-radius: 8px;
+    position:relative;
+    cursor:pointer;
+    font-size:18px;
+}
+
+#btnBack:hover{
+	background:#E0E2E8;
+}
+
+#btn_search{
+	width: 70px;
+    margin-left: 10px;
+    height:25px;
+    background: #929292;
+    border: solid #599EF4 1px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#pre{
+	position:relative;
+	top:20px;
+	left:40px;
+	background:#3874AC;
+	border-radius: 8px;
+	color:white;
+	padding:3px;
+	cursor:pointer;
+}
+
+#beh{
+	background:#3874AC;
+	border-radius: 8px;
+	color:white;
+	position:relative;
+	top:20px;
+	left:60px;
+	padding:3px;
+	cursor:pointer;
+}
+
+#pre:hover, #beh:hover{
+	background:#959ADA;
+}
+
+#oneinfo{
+	display:none;
+}
+
+#showtable{
+	border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #BCB2B2;
+	width:100%;
+	-webkit-box-shadow:  0px 2px 1px 5px rgba(242, 242, 242, 0.1);
+    box-shadow:  0px 2px 1px 5px rgba(242, 242, 242, 0.1);
+	margin-top:10px;
+}
+
+#showtable td {
+    border-left: 1px solid #555;
+    border-top: 1px solid #555;
+    padding: 10px;
+    text-align: left;    
+}
+
+#showtable th, #showtable th:hover {
+    border-left: 1px solid #555;
+	border-bottom: 1px solid #828282;
+    padding: 20px;  
+    background-color:#929292 !important;
+	color:black !important;
+	font-weight:normal;
+}
+
+#showtable tbody tr:nth-child(even) {
+    background: #F2DEDE !important;
+	color:black;
+}
+
+#showtable tr:hover *{
+    background: #eeeeee;
+	color:#000;
+}
+
+#showtable tr {
+	background:#D9EDF7;
+	color:black;
+}

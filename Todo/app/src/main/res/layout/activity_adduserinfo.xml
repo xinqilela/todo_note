@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/test">
+    <com.example.linukey.addedit_userinfo.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:id="@+id/userlogo"
+        android:src="@mipmap/circle_icon"
+        android:onClick="onClick_setLogo"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/userlogo"
+        android:width="250dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="40dp"
+        android:textColor="#102F38"
+        android:textCursorDrawable="@null"
+        android:background="@null"
+        android:id="@+id/username"
+        android:hint="请输入用户名"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/username"
+        android:width="250dp"
+        android:textCursorDrawable="@null"
+        android:layout_marginTop="3dp"
+        android:textColor="#102F38"
+        android:background="@null"
+        android:paddingLeft="40dp"
+        android:id="@+id/email"
+        android:hint="请输入邮箱"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/email"
+        android:paddingLeft="40dp"
+        android:textCursorDrawable="@null"
+        android:width="250dp"
+        android:textColor="#102F38"
+        android:layout_marginTop="3dp"
+        android:background="@null"
+        android:id="@+id/phone"
+        android:hint="请输入手机号码"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/phone"
+        android:layout_marginTop="60dp"
+        android:width="250dp"
+        android:background="@drawable/selectshape"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20sp"
+        android:onClick="onClick_submit"
+        android:id="@+id/btnSubmit"
+        android:textColor="#FFFFFF"
+        android:text="完成修改"/>
+</RelativeLayout>

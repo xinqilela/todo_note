@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-5 10:18:53 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.linukey.todo.entity">
+    <class name="Goal" table="goal">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="title" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="content" />
+        </property>
+        <property name="selfId" type="java.lang.String">
+            <column name="selfId" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" />
+        </property>
+        <property name="userId" type="java.lang.String">
+            <column name="userId" />
+        </property>
+        <property name="isdelete" type="java.lang.String">
+            <column name="isdelete" />
+        </property>
+    </class>
+</hibernate-mapping>

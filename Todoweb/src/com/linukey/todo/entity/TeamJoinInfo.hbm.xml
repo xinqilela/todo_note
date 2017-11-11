@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.linukey.todo.entity">
+
+	<class name="TeamJoinInfo" table="teamjoininfo">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="fromUserName" type="java.lang.String">
+			<column name="fromUserName" />
+		</property>
+		<property name="toUserName" type="java.lang.String">
+			<column name="toUserName" />
+		</property>
+		<property name="teamId" type="java.lang.String">
+			<column name="teamId" />
+		</property>
+		<property name="isdelete" type="java.lang.String">
+			<column name="isdelete" />
+		</property>
+		<property name="execType" type="java.lang.String">
+			<column name="execType" />
+		</property>
+		<property name="teamName" type="java.lang.String">
+			<column name="teamName" />
+		</property>
+		<property name="content" type="java.lang.String">
+			<column name="content" />
+		</property>
+		<property name="fromUserId" type="java.lang.String">
+			<column name="fromUserId" />
+		</property>
+		<property name="toUserId" type="java.lang.String">
+			<column name="toUserId" />
+		</property>
+		<property name="selfId" type="java.lang.String">
+			<column name="selfId" />
+		</property>
+	</class>
+</hibernate-mapping>

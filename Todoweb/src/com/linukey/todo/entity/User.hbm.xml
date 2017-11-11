@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.linukey.todo.entity">
+
+	<class name="User" table="user">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="username" type="java.lang.String">
+			<column name="username" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="password" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" />
+		</property>
+		<property name="phonenumber" type="java.lang.String">
+			<column name="phonenumber" />
+		</property>
+		<property name="usergroup" type="java.lang.String">
+			<column name="usergroup" />
+		</property>
+		<property name="userId" type="java.lang.String">
+			<column name="userId" />
+		</property>
+		<property name="imgpath" type="java.lang.String">
+			<column name="imgpath" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Todo</string>
+    <string name="action_settings">Settings</string>
+    <drawable name="teamsearchbackbtnpress">#2B2B2B</drawable>
+    <drawable name="teamsearchbackbtnnotpress">#3B3D41</drawable>
+    <drawable name="teamjoinresult0or1back">#00000000</drawable>
+    <drawable name="teamjoinresult0or1text">#3B3D41</drawable>
+    <drawable name="homepageOne">#FF4A50</drawable>
+    <drawable name="homepageTwo">#00B8D2</drawable>
+    <drawable name="homepageThree">#DD941E</drawable>
+    <drawable name="homepageFour">#00B99F</drawable>
+    <drawable name="menuselectornotpress">#91C653</drawable>
+</resources>
